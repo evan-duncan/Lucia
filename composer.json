@@ -1,6 +1,6 @@
 {
     "name": "evan-duncan/lucia",
-    "description": "Tiny web framework inspired by expressjs\"",
+    "description": "Tiny web framework inspired by expressjs",
     "type": "library",
     "require": {
         "react/http": "^1.5"
