@@ -6,7 +6,9 @@
         "react/http": "^1.5"
     },
     "require-dev": {
-        "pestphp/pest": "^1.20"
+        "pestphp/pest": "^1.20",
+        "monolog/monolog": "^2.3",
+        "guzzlehttp/psr7": "^2.1"
     },
     "license": "MIT",
     "autoload": {
