@@ -7,10 +7,12 @@ use React\Socket\SocketServer;
 class App
 {
     private Router $router;
+    private MiddlewareStack $middleware;
 
     public function __construct()
     {
         $this->router = new Router;
+        $this->middleware = new MiddlewareStack;
     }
 
     /**
@@ -21,7 +23,12 @@ class App
      */
     public function listen(string $uri): void
     {
-        (new Server($this->router))->listen(new SocketServer($uri));
+        (new Server($this->router, $this->middleware))->listen(new SocketServer($uri));
+    }
+
+    public function use(callable $middleware)
+    {
+        $this->middleware->push($middleware);
     }
 
     /**

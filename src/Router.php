@@ -41,9 +41,7 @@ class Router
 
         return new Response(
             404,
-            array(
-                'Content-Type' => 'text/plain',
-            ),
+            $req->getHeaders(),
             "Not Found\n",
         );
     }
